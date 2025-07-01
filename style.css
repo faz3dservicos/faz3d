@@ -93,9 +93,69 @@ main, .hero, .features, .content {
   margin-top: 20px;
 }
 
-/* RODAPÉ */
-footer {
-  padding: 30px 20px;
+/* ==========================
+   1) ICONES SOCIAIS NO RODAPÉ
+   ========================== */
+footer .social {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+footer .social img {
+  width: 24px;               /* reduz icon para 24px */
+  filter: invert(1);         /* mantém branco no fundo escuro */
 }
 
-/* ... (mantém o restante do CSS para seções e rodapé) ... */
+/* ===================================
+   2) ICONES SOCIAIS NAS SEÇÕES DE CONTEÚDO
+   =================================== */
+.content .social {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  margin: 20px 0;
+}
+.content .social img {
+  width: 28px;               /* um pouco maior que no rodapé */
+  filter: none;              /* mantém cor original */
+}
+
+/* =========================
+   3) REFINAMENTO DAS SEÇÕES
+   ========================= */
+main, .hero, .features, .content {
+  padding: 60px 20px;        /* aumenta padding para “arejar” */
+  max-width: 1000px;         /* deixa conteúdo centrado */
+  margin: 0 auto;
+}
+.content h2, .features h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.content ul, .content ol {
+  margin: 20px 0 0 20px;     /* recua listas para legibilidade */
+}
+.content p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+/* =========================
+   4) AJUSTE DO HERO
+   ========================= */
+.hero {
+  background: var(--hero-bg);
+  padding: 80px 20px;
+}
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* =========================
+   5) BOTÕES E LINKS
+   ========================= */
+.btn-primary {
+  margin-top: 25px;
+}
