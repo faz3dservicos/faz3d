@@ -1,23 +1,44 @@
-/* ... (mantém todo o reset e variáveis) ... */
+/* RESET E VARIÁVEIS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary: #0CC0DF;
+  --dark-bg: #111111;
+  --light-bg: #FFFFFF;
+  --text-light: #FFFFFF;
+  --text-dark: #111111;
+  --hero-bg: #f9f9f9;
+}
 
-/* HEADER FLEX */
+/* GLOBAL */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+  background: var(--light-bg);
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+}
+
+/* CABEÇALHO */
 header {
   background: var(--primary);
-  padding: 10px 20px;          /* mais espaçamento lateral */
+  padding: 10px 20px;
 }
 .header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 .logo img {
-  max-height: 35px;            /* ~30% menor se antes era 50px */
-  width: auto;
+  max-height: 35px;
 }
-
-/* NAV */
 nav ul {
   list-style: none;
   display: flex;
@@ -25,30 +46,25 @@ nav ul {
 }
 nav ul li {
   position: relative;
-  margin-left: 20px;           /* espaçamento entre itens */
+  margin-left: 20px;
 }
 nav ul li > a,
 nav ul li > span {
   color: var(--text-light);
-  text-decoration: none;
   font-weight: 500;
   padding: 8px 12px;
 }
 nav ul li > a:hover,
 nav ul li > span:hover {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
 }
 
-/* SUBMENU FIXO */
-.has-submenu:hover .submenu,
-.has-submenu .submenu:hover {
-  display: block;              /* mantém aberto se foco no submenu */
-}
-.submenu {
+/* SUBMENU */
+.has-submenu .submenu {
   display: none;
   position: absolute;
-  top: 100%;                   /* logo fica alinhado diretamente abaixo */
+  top: 100%;
   left: 0;
   background: var(--primary);
   border-radius: 5px;
@@ -56,46 +72,117 @@ nav ul li > span:hover {
   min-width: 180px;
   z-index: 10;
 }
-.submenu li a {
-  padding: 8px 20px;
+.has-submenu:hover .submenu,
+.has-submenu .submenu:hover {
   display: block;
+}
+.submenu li a {
+  display: block;
+  padding: 8px 20px;
   color: var(--text-light);
+  font-weight: 400;
 }
 .submenu li a:hover {
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
 }
 
-/* ESPAÇAMENTOS GERAIS */
-main, .hero, .features, .content {
-  padding: 40px 20px;          /* aumenta espaçamento interno */
-  max-width: 1200px;
+/* HERO */
+.hero {
+  background: var(--hero-bg);
+  padding: 80px 20px;
+  text-align: center;
+}
+.hero-content {
+  max-width: 700px;
   margin: 0 auto;
 }
-
-/* WHATSAPP */
-.whatsapp {
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  width: 60px;
-  height: 60px;
-  z-index: 1000;
+.hero h1 {
+  font-size: 36px;
+  color: var(--primary);
+  margin-bottom: 15px;
 }
-.whatsapp img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+.hero p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
 }
-
-/* GARANTE QUE O BTN APONTE */
 .btn-primary {
-  margin-top: 20px;
+  display: inline-block;
+  background: var(--dark-bg);
+  color: var(--text-light);
+  padding: 12px 24px;
+  border-radius: 4px;
+  margin-top: 25px;
 }
 
-/* ==========================
-   1) ICONES SOCIAIS NO RODAPÉ
-   ========================== */
+/* FEATURES */
+.features {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+.features h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: var(--light-bg);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: left;
+}
+.card h3 {
+  margin-bottom: 10px;
+  color: var(--primary);
+}
+.card p {
+  color: #555;
+  font-size: 16px;
+}
+
+/* SEÇÕES DE CONTEÚDO */
+.content {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.content h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.content p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+.content ul,
+.content ol {
+  margin: 20px 0 0 20px;
+}
+
+/* SOCIAL ICONS NAS SEÇÕES */
+.content .social {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0;
+}
+.content .social img {
+  width: 28px;
+}
+
+/* RODAPÉ */
+footer {
+  background: var(--dark-bg);
+  color: var(--text-light);
+  text-align: center;
+  padding: 30px 20px;
+}
 footer .social {
   display: flex;
   justify-content: center;
@@ -103,59 +190,30 @@ footer .social {
   margin-bottom: 15px;
 }
 footer .social img {
-  width: 24px;               /* reduz icon para 24px */
-  filter: invert(1);         /* mantém branco no fundo escuro */
+  width: 24px;
+  filter: invert(1);
+}
+footer .links {
+  margin: 10px 0;
+}
+footer .links a {
+  color: var(--primary);
+}
+footer .links a:hover {
+  text-decoration: underline;
 }
 
-/* ===================================
-   2) ICONES SOCIAIS NAS SEÇÕES DE CONTEÚDO
-   =================================== */
-.content .social {
-  display: flex;
-  justify-content: flex-start;
-  gap: 12px;
-  margin: 20px 0;
+/* BOTÃO WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
 }
-.content .social img {
-  width: 28px;               /* um pouco maior que no rodapé */
-  filter: none;              /* mantém cor original */
-}
-
-/* =========================
-   3) REFINAMENTO DAS SEÇÕES
-   ========================= */
-main, .hero, .features, .content {
-  padding: 60px 20px;        /* aumenta padding para “arejar” */
-  max-width: 1000px;         /* deixa conteúdo centrado */
-  margin: 0 auto;
-}
-.content h2, .features h2 {
-  text-align: center;
-  margin-bottom: 30px;
-}
-.content ul, .content ol {
-  margin: 20px 0 0 20px;     /* recua listas para legibilidade */
-}
-.content p {
-  margin-bottom: 20px;
-  line-height: 1.8;
-}
-
-/* =========================
-   4) AJUSTE DO HERO
-   ========================= */
-.hero {
-  background: var(--hero-bg);
-  padding: 80px 20px;
-}
-.hero-content {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-/* =========================
-   5) BOTÕES E LINKS
-   ========================= */
-.btn-primary {
-  margin-top: 25px;
+.whatsapp img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
