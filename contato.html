@@ -30,30 +30,38 @@
   </div>
 </header>
 
-  <main>
-    <section class="hero">
-      <h1>Fale Conosco</h1>
-      <p>Entre em contato para tirar dúvidas, solicitar orçamentos ou conhecer melhor nossos serviços.</p>
-    </section>
-    <section class="content">
-      <form action="#" method="post">
-        <label>Nome:</label>
-        <input type="text" name="nome" required>
-        <label>Email:</label>
-        <input type="email" name="email" required>
-        <label>Mensagem:</label>
-        <textarea name="mensagem" rows="5" required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
-      <p>Ou fale diretamente pelas nossas redes sociais:</p>
-      <div class="social">
-        <a href="#"><img src="icons/facebook.svg" alt="Facebook" /></a>
-        <a href="#"><img src="icons/instagram.svg" alt="Instagram" /></a>
-        <a href="#"><img src="icons/linkedin.svg" alt="LinkedIn" /></a>
-        <a href="#"><img src="icons/youtube.svg" alt="YouTube" /></a>
-      </div>
-    </section>
-  </main>
+ <main>
+  <!-- Seção Hero -->
+  <section class="hero">
+    <h1>Fale Conosco</h1>
+    <p>Entre em contato para tirar dúvidas, solicitar orçamentos ou conhecer melhor nossos serviços.</p>
+  </section>
+
+  <!-- Seção de Conteúdo (formulário + ícones sociais) -->
+  <section class="content">
+    <!-- Formulário de contato -->
+    <form action="https://formspree.io/f/xknarwpl" method="POST">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="message" rows="5" required></textarea>
+
+      <button type="submit" class="btn-primary">Enviar</button>
+    </form>
+
+    <!-- Ícones das redes sociais na seção de conteúdo -->
+    <div class="social">
+      <a href="#" aria-label="Facebook"><img src="icons/facebook.svg" alt="Facebook" /></a>
+      <a href="#" aria-label="Instagram"><img src="icons/instagram.svg" alt="Instagram" /></a>
+      <a href="#" aria-label="LinkedIn"><img src="icons/linkedin.svg" alt="LinkedIn" /></a>
+      <a href="#" aria-label="YouTube"><img src="icons/youtube.svg" alt="YouTube" /></a>
+    </div>
+  </section>
+</main>
 
  <footer>
   <div class="footer-inner">
