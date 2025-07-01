@@ -2,19 +2,22 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FAZ3D - Início</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <div class="logo">FAZ3D</div>
+    <div class="logo">
+  <img src="logo.png" alt="FAZ3D Logo" />
+</div>
     <nav>
       <ul>
         <li><a href="index.html">Início</a></li>
         <li><a href="servicos.html">Serviços</a></li>
-        <li>Sobre
-          <ul>
+        <li>
+          <span>Sobre</span>
+          <ul class="submenu">
             <li><a href="quem-somos.html">Quem somos</a></li>
             <li><a href="sobre-impressao-3d.html">Sobre impressão 3D</a></li>
             <li><a href="nosso-processo.html">Nosso processo</a></li>
@@ -24,26 +27,54 @@
       </ul>
     </nav>
   </header>
+
   <main>
     <section class="hero">
-      <h1>Bem-vindo à FAZ3D</h1>
-      <p>Transformamos ideias em realidade com a tecnologia da impressão 3D.</p>
+      <div class="hero-content">
+        <h1>Bem-vindo à FAZ3D</h1>
+        <p>Transformamos ideias em realidade com a tecnologia da impressão 3D.</p>
+        <a href="servicos.html" class="btn-primary">Conheça nossos serviços</a>
+      </div>
+    </section>
+
+    <section class="features">
+      <h2>Por que escolher a FAZ3D?</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>10+ anos de mercado</h3>
+          <p>Experiência comprovada e centenas de clientes satisfeitos.</p>
+        </div>
+        <div class="card">
+          <h3>Atendimento personalizado</h3>
+          <p>Consultoria técnica para cada etapa do seu projeto.</p>
+        </div>
+        <div class="card">
+          <h3>Alta tecnologia</h3>
+          <p>Equipamentos de última geração para precisão máxima.</p>
+        </div>
+        <div class="card">
+          <h3>Entrega rápida</h3>
+          <p>Processos otimizados para cumprir prazos com qualidade.</p>
+        </div>
+      </div>
     </section>
   </main>
+
   <footer>
     <div class="social">
-      <a href="#"><img src="icons/facebook.svg" alt="Facebook"></a>
-      <a href="#"><img src="icons/instagram.svg" alt="Instagram"></a>
-      <a href="#"><img src="icons/linkedin.svg" alt="LinkedIn"></a>
-      <a href="#"><img src="icons/youtube.svg" alt="YouTube"></a>
+      <a href="#" aria-label="Facebook"><img src="icons/facebook.svg" alt="Facebook" /></a>
+      <a href="#" aria-label="Instagram"><img src="icons/instagram.svg" alt="Instagram" /></a>
+      <a href="#" aria-label="LinkedIn"><img src="icons/linkedin.svg" alt="LinkedIn" /></a>
+      <a href="#" aria-label="YouTube"><img src="icons/youtube.svg" alt="YouTube" /></a>
     </div>
     <div class="links">
       <a href="politica-de-privacidade.html">Política de Privacidade</a> |
       <a href="termos-de-uso.html">Termos de Uso</a>
     </div>
-    <p>&copy; 2025 FAZ3D. Todos os direitos reservados.</p>
+    <p>© 2025 FAZ3D. Todos os direitos reservados.</p>
   </footer>
-  <a href="https://wa.me/5511999999999" target="_self" class="whatsapp">
+
+  <a href="https://wa.me/5511999999999" class="whatsapp" aria-label="WhatsApp" target="_self">
     <img src="icons/whatsapp.svg" alt="WhatsApp" />
   </a>
 </body>
