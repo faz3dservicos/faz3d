@@ -1,8 +1,6 @@
 /* RESET E VARIÁVEIS */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; padding: 0; box-sizing: border-box;
 }
 :root {
   --primary: #0CC0DF;
@@ -11,6 +9,7 @@
   --text-light: #FFFFFF;
   --text-dark: #111111;
   --hero-bg: #f9f9f9;
+  --logo-height: 1.5cm;         /* logo 1,5 cm */
 }
 
 /* GLOBAL */
@@ -25,6 +24,9 @@ body {
 header {
   background: var(--primary);
   padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 .header-inner {
   display: flex;
@@ -34,7 +36,7 @@ header {
   margin: 0 auto;
 }
 .logo img {
-  max-height: 35px;
+  height: var(--logo-height);
   width: auto;
 }
 nav ul {
@@ -148,7 +150,7 @@ nav ul li > span:hover {
   font-size: 16px;
 }
 
-/* CONTENT (listas, parágrafos) */
+/* CONTENT */
 .content {
   padding: 60px 20px;
   max-width: 1000px;
@@ -171,7 +173,13 @@ nav ul li > span:hover {
   margin-bottom: 10px;
 }
 
-/* SOCIAL ICONS (rodapé) */
+/* RODAPÉ */
+footer {
+  background: var(--dark-bg);
+  color: var(--text-light);
+  text-align: center;
+  padding: 30px 20px;
+}
 footer .social {
   display: flex;
   justify-content: center;
@@ -179,27 +187,7 @@ footer .social {
   margin-bottom: 15px;
 }
 footer .social img {
-  width: 24px;
-  filter: invert(1);
-}
-
-/* SOCIAL ICONS (conteúdo) */
-.content .social {
-  display: flex;
-  gap: 12px;
-  margin: 20px 0;
-}
-.content .social img {
-  width: 28px;
-  filter: none;
-}
-
-/* RODAPÉ */
-footer {
-  background: var(--dark-bg);
-  color: var(--text-light);
-  text-align: center;
-  padding: 30px 20px;
+  width: 24px;              /* ícones de rede no rodapé */
 }
 footer .links {
   margin: 10px 0;
@@ -213,7 +201,7 @@ footer .links a:hover {
   text-decoration: underline;
 }
 
-/* WHATSAPP */
+/* BOTÃO WHATSAPP */
 .whatsapp {
   position: fixed;
   bottom: 40px;
@@ -228,3 +216,10 @@ footer .links a:hover {
   border-radius: 50%;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
+/* ÍCONES COM CORES DA MARCA */
+footer .social a[aria-label="Facebook"] img { fill: #1877F2; }
+footer .social a[aria-label="Instagram"] img { filter: none; } /* mantém colorido SVG */
+footer .social a[aria-label="LinkedIn"] img { fill: #0A66C2; }
+footer .social a[aria-label="YouTube"] img { fill: #FF0000; }
+footer .social a[aria-label="WhatsApp"] img { fill: #25D366; }
